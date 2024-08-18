@@ -8,27 +8,27 @@
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
 </head>
 <body>
-  <div class="container-fluid">
+  <div class="container">
     <div x-data="rssFeed()" x-init="fetchFeed()">
       <h1>Alpine.js RSS Reader Parsing BlueSky User Feed</h1>
       <div x-show="loading">Loading...</div>
       <div x-show="!loading && error" class="error">
         <p>Error loading feed: <span x-text="error"></span></p>
       </div>
-      <div x-show="!loading && !error">
-        <div class="row row-cols-1 row-cols-md-4 g-4">
-          <template x-for="item in feedItems" :key="item.link">
-            <div class="col">
-              <div class="card border-primary mb-3">
-                <div class="card-body">
-                  <p class="card-text" x-text="item.description"></p>
-                </div>
-                <div class="card-footer text-body-secondary">
-                  Posted: <a :href="item.link" target="_blank" x-text="formatDate(item.pubDate)"></a>
-                </div>
-              </div>
-            </div>              
-          </template>
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-sm-12">
+          <div x-show="!loading && !error">
+            <template x-for="item in feedItems" :key="item.link">
+                <div class="card border-primary mb-3">
+                  <div class="card-body">
+                    <p class="card-text" x-text="item.description"></p>
+                  </div>
+                  <div class="card-footer text-body-secondary">
+                    Posted: <a :href="item.link" target="_blank" x-text="formatDate(item.pubDate)"></a>
+                  </div>
+                </div>            
+            </template>
+          </div>
         </div>
       </div>
     </div>

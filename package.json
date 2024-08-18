@@ -1,0 +1,15 @@
+{
+  "name": "alpine.js-rss-reader",
+  "version": "1.0.0",
+  "description": "A simple RSS feed reader application using Alpine.js. This app fetches and displays posts from a BlueSky user feed, presenting them in a card layout using Bootstrap.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.0"
+  }
+}
